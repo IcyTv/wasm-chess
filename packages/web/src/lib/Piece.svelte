@@ -21,8 +21,8 @@
 
 	export let width = "1rem";
 	export let height = "1rem";
-	export let focusable = false;
-	export let selected = false;
+	export let focusable: boolean = false;
+	export let selected: boolean = false;
 
 	$: id = board.get(row, col);
 

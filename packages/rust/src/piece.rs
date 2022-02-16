@@ -69,9 +69,7 @@ impl Piece {
         let mut score = 0;
         if self.contains(Piece::PAWN) {
             score += 1;
-        } else if self.contains(Piece::KNIGHT) {
-            score += 3;
-        } else if self.contains(Piece::BISHOP) {
+        } else if self.contains(Piece::BISHOP) || self.contains(Piece::KNIGHT) {
             score += 3;
         } else if self.contains(Piece::ROOK) {
             score += 5;

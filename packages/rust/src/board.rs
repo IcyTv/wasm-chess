@@ -3,7 +3,7 @@ use wasm_bindgen::JsValue;
 
 use crate::moves::Move;
 use crate::piece::Piece;
-use crate::pos::{Position, self};
+use crate::pos::{self, Position};
 
 use std::fmt;
 
@@ -376,12 +376,16 @@ impl Board {
         let mut positions = Vec::<Position>::new();
 
         for i in 0..64 {
-            let pos = i.into();
-            if self[pos] != Piece::NONE {
+            let pos: Position = i.into();
+            if self[pos.clone()] != Piece::NONE {
                 positions.push(pos);
             }
         }
 
         positions
+    }
+
+    pub fn is_game_over(&self) -> bool {
+        false
     }
 }

@@ -64,7 +64,7 @@
 	<div class="board noselect">
 		{#each Array.from(Array(8).keys()) as col}
 			<div class="column">
-				{#each Array.from(Array(8).keys()) as row}
+				{#each Array.from(Array(8).keys()).reverse() as row}
 					<div
 						class="field {marked.includes(col * 8 + row)
 							? 'marked'
